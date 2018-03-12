@@ -31,11 +31,11 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["env"],
+            presets: ["env", "react"],
             plugins: [
               "transform-object-rest-spread",
               [ "transform-react-jsx", {
-                pragma: "React"
+                pragma: "React.createElement"
               }]
             ]
           }

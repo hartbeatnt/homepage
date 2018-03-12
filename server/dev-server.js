@@ -12,7 +12,7 @@ const wds = process.platform === 'win32'
 // env.load();
 
 let spawnedProcesses = [
-	  [wds, ['--port', 8081, '--colors', '--host', '0.0.0.0', '--config', 'client/config/webpack.config.js']],
+	  [wds, ['--port', 8081, '--colors', '--host', '0.0.0.0', '--config', 'client/config/webpack.config.js', '--mode', 'development']],
 	  [nodemon, ['--ignore', 'public/', '--ignore', 'client/', '--ignore', 'dist/', 'server/server.js', '--port', 8080]],
 ];
 
