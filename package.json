@@ -1,0 +1,19 @@
+{
+  "name": "homepage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hartbeatnt/homepage.git"
+  },
+  "author": "nate hart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hartbeatnt/homepage/issues"
+  },
+  "homepage": "https://github.com/hartbeatnt/homepage#readme"
+}
