@@ -2,9 +2,10 @@
   "name": "homepage",
   "version": "1.0.0",
   "description": "",
-  "main": "server/index.js",
+  "main": "server/server.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "dev-server": "node server/dev-server.js"
   },
   "repository": {
     "type": "git",
@@ -30,9 +31,12 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.10",
+    "nodemon": "^1.17.1",
     "react": "^16.2.0",
     "style-loader": "^0.20.3",
     "webpack": "^4.1.1",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-cli": "^2.0.11",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
   }
 }
