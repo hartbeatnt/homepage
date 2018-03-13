@@ -25,7 +25,7 @@ deploy:
   bundle_type: zip
   application: homepgae
   deployment_group: BlueGreenDemoFleet-a94q68z
-  region: serverRegionHERE
+  region: us-west-1
   on: *2
 script:
   - zip -r latest *
