@@ -23,8 +23,8 @@ deploy:
   bucket: natehart.xyz
   key: latest.zip
   bundle_type: zip
-  application: homepgae
-  deployment_group: BlueGreenDemoFleet-a94q68z
+  application: homepage
+  deployment_group: homepage-code-deploy
   region: us-west-1
   on: *2
 script:
