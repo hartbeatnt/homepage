@@ -7,6 +7,15 @@ cache:
   directories:
     - node_modules
 
+before_script:
+  - port = 8080
+
+script:
+  - npm run build
+  - zip -r latest dist server
+  - mkdir -p dpl_cd_upload
+  - mv latest.zip dpl_cd_upload/latest.zip
+  
 deploy:
 - provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
@@ -15,8 +24,13 @@ deploy:
   skip_cleanup: true
   on: &2
     repo: hartbeatnt/homepage
+    branches:
+      only:
+        - master
+        - develop
   bucket: natehart.xyz
   region: us-west-1
+
 - provider: codedeploy
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
@@ -27,7 +41,3 @@ deploy:
   deployment_group: homepage-code-deploy
   region: us-west-1
   on: *2
-script:
-  - zip -r latest *
-  - mkdir -p dpl_cd_upload
-  - mv latest.zip dpl_cd_upload/latest.zip
