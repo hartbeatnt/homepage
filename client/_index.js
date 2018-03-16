@@ -5,7 +5,7 @@ import store from 'store/store.config.js';
 const App = () => {
   return (
     <div>
-      <p>Hello Worrld</p>
+      <p>Hello Worrrld</p>
       
     </div>
   );
