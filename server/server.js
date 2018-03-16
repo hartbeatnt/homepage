@@ -3,7 +3,8 @@ const env = require('dotenv');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
-const app = require('express')();
+const express = require('express');
+const app = express();
 const server = require('http').Server(app);
 
 const router = require('./routers/_index');
@@ -18,6 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true  }));
 app.use('/', router);
 
 server.listen(process.env.PORT || 8080, function () {
-		console.log(`Listening on port ${process.env.PORT}!`);
+		console.log(`Listening on port ${process.env.PORT || 8080}!`);
 		
 });
