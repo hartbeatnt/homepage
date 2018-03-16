@@ -3,3 +3,6 @@ os: linux
 files:
   - source: ./
     destination: /home/ubuntu/homepage
+hooks:
+  ApplicationStart:
+    - location: bin/npm-start.sh
