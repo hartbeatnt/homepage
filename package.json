@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "test": "test",
-    "dev-server": "node server/dev-server.js",
+    "dev-server": "node server/dev-server.js --mode development --open",
     "build": "webpack --mode production --config client/config/webpack.config.js"
   },
   "repository": {

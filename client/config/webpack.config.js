@@ -55,7 +55,8 @@ module.exports = {
       React: 'react',
     }),
     new HtmlWebpackPlugin({
-      filename: './index.html'
+      filename: 'index.html',
+      template: path.resolve("client/index.html")
     }),
 	],
   devtool: "source-map",

@@ -5,15 +5,11 @@ import store from 'store/store.config.js';
 const App = () => {
   return (
     <div>
-      <p>Hello World</p>
+      <p>Hello Worrld</p>
       
     </div>
   );
 };
-
-const app = document.createElement('div');
-app.id = "app";
-document.body.appendChild(app);
 
 ReactDOM.render(
   <Provider store={store}><App/></Provider>, document.querySelector("#app")
