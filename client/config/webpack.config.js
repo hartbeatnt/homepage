@@ -1,5 +1,8 @@
 const path = require("path");
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+console.log(process.env.NODE_ENV);
 
 module.exports = {
   entry: {
@@ -50,6 +53,9 @@ module.exports = {
 	plugins: [
 		new webpack.ProvidePlugin({
       React: 'react',
+    }),
+    new HtmlWebpackPlugin({
+      filename: './index.html'
     }),
 	],
   devtool: "source-map",

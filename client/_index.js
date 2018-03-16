@@ -10,7 +10,11 @@ const App = () => {
     </div>
   );
 };
-export default App;
+
+const app = document.createElement('div');
+app.id = "app";
+document.body.appendChild(app);
+
 ReactDOM.render(
   <Provider store={store}><App/></Provider>, document.querySelector("#app")
 );
