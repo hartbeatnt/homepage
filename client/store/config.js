@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import { enhancer, middleware as routesMiddleware} from './route/routes.js';
-import rootReducer from 'store/root.reducer';
+import rootReducer from 'store/root-reducer';
 import { compose } from 'redux';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

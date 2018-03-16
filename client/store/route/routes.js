@@ -2,8 +2,8 @@ import {connectRoutes} from 'redux-first-router'
 import createHistory from 'history/createBrowserHistory'
 
 const routes = {
-  "ROUTE_HOME": {
-    path: '/',
+  "ROUTE_BOO": {
+    path: '/boo',
     thunk: async dispatch => {
       const response = await fetch('/test');
       const data = await response.json();
