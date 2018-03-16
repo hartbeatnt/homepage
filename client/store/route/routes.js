@@ -1,9 +1,11 @@
-import {connectRoutes} from 'redux-first-router'
-import createHistory from 'history/createBrowserHistory'
+import {connectRoutes} from 'redux-first-router';
+import createHistory from 'history/createBrowserHistory';
+
+const history = createHistory();
 
 const routes = {
-  "ROUTE_BOO": {
-    path: '/boo',
+  "ROUTE_HOME": {
+    path: '/',
     thunk: async dispatch => {
       const response = await fetch('/test');
       const data = await response.json();
@@ -12,8 +14,6 @@ const routes = {
     }
   },
 };
-
-const history = createHistory();
 
 export const {
   reducer,

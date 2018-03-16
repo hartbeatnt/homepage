@@ -1,8 +1,18 @@
 import { connect } from 'react-redux';
-import routes from './routes';
+import { NOT_FOUND } from 'redux-first-router';
+import routes from './route-map';
 
-const App = props => (
-  <div>hellow orld</div>
-)
+const stateToProps = state => ({
+  route: state.location.type,
+})
 
-export default App;
+const Container = ({route}) => {
+  const Route = routes[route] || routes[NOT_FOUND];
+  return (
+    <div>
+      <Route />
+    </div>
+  )
+}
+
+export default connect(stateToProps)(Container)
