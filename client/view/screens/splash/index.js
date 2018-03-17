@@ -17,15 +17,16 @@ const dispatchToProps = dispatch => ({
 })
 
 const component = props => {
-  console.log(props)
   return (
     <div className={style.container}>
       <a-scene 
         vr-mode-ui="enabled: false" 
         keyboard-shortcuts="enterVR: false">
-        <a-camera no-click-look={`max-tilt: 0.89; min-tilt:-0.2`}
+        <a-camera 
+          no-click-look={`max-tilt: 0.89; min-tilt:-0.2`}
           wasd-controls="enabled:false"/>
-        <a-sky src="http://res.cloudinary.com/glimpse/image/upload/v1484287066/photospheres/kcjscouufhafxavyyanf.png"/>
+        <a-sky 
+          src="http://res.cloudinary.com/glimpse/image/upload/v1484287066/photospheres/kcjscouufhafxavyyanf.png"/>
       </a-scene>
       <div className={style.links}>
         <Link to="/code"><div className={style.link}/></Link>
