@@ -8,19 +8,24 @@ const getPosition = (i, w, h) => {
     : `0 ${i * 3} -10`
 }
 
-const stateToProps = state => state.location;
+const stateToProps = state => ({
+  screen: state.screen
+});
 
 const dispatchToProps = dispatch => ({
 
 })
 
 const component = props => {
-  const [ w,h ] = [window.innerWidth, window.innerHeight];
+  console.log(props)
   return (
     <div className={style.container}>
-      <a-scene vr-mode-ui="enabled: false">
-        <a-camera no-click-look="max-tilt: 30"/>
-        <a-sky src="https://roadtovrlive-5ea0.kxcdn.com/wp-content/uploads/2014/09/Venice.Still001.jpeg"/>
+      <a-scene 
+        vr-mode-ui="enabled: false" 
+        keyboard-shortcuts="enterVR: false">
+        <a-camera no-click-look={`max-tilt: 0.89; min-tilt:-0.2`}
+          wasd-controls="enabled:false"/>
+        <a-sky src="http://res.cloudinary.com/glimpse/image/upload/v1484287066/photospheres/kcjscouufhafxavyyanf.png"/>
       </a-scene>
       <div className={style.links}>
         <Link to="/code"><div className={style.link}/></Link>

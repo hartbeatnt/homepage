@@ -22,7 +22,8 @@ module.exports.Component = registerComponent('no-click-look', {
     pointerLockEnabled: {default: true},
     reverseMouseDrag: {default: false},
     touchEnabled: {default: true},
-    maxTilt: {default: false},
+    maxTilt: {default: PI_2},
+    minTilt: {default: -PI_2},
   },
 
   init: function () {
@@ -231,13 +232,11 @@ module.exports.Component = registerComponent('no-click-look', {
     // Calculate rotation.
     yawObject.rotation.y -= movementX * 0.002;
     pitchObject.rotation.x -= movementY * 0.002;
-    if (this.data.maxTilt && pitchObject.rotation.y > this.data.maxTilt) {
-      pitchObject.rotation.y = this.data.maxTilt;
-    }
-    if (this.data.maxTilt && pitchObject.rotation.y < -this.data.maxTilt) {
-      pitchObject.rotation.y = - this.data.maxTilt;
-    }
-    pitchObject.rotation.x = Math.max(-PI_2, Math.min(PI_2, pitchObject.rotation.x));
+    
+    pitchObject.rotation.x = Math.max(
+      this.data.minTilt, 
+      Math.min(this.data.maxTilt, pitchObject.rotation.x)
+    );
   },
 
   /**
