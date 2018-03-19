@@ -18,7 +18,7 @@ module.exports.Component = registerComponent('no-click-look', {
 
   schema: {
     enabled: {default: true},
-    hmdEnabled: {default: true},
+    hmdEnabled: {default: false},
     pointerLockEnabled: {default: true},
     reverseMouseDrag: {default: false},
     touchEnabled: {default: true},
@@ -69,7 +69,7 @@ module.exports.Component = registerComponent('no-click-look', {
     if (oldData && !data.pointerLockEnabled !== oldData.pointerLockEnabled) {
       this.removeEventListeners();
       this.addEventListeners();
-      if (this.pointerLocked) { document.exitPointerLock(); }
+      // if (this.pointerLocked) { document.exitPointerLock(); }
     }
   },
 
@@ -199,11 +199,15 @@ module.exports.Component = registerComponent('no-click-look', {
 
     // On mobile, do camera rotation with touch events and sensors.
     
-    el.object3D.rotation.x =Math.max(
+    const targetX = Math.max(
       this.data.minTilt, 
-      Math.min(this.data.maxTilt, hmdEuler.x + pitchObject.rotation.x)
+      Math.min(this.data.maxTilt, 0.03 * hmdEuler.x + pitchObject.rotation.x)
     );
-    el.object3D.rotation.y = hmdEuler.y + yawObject.rotation.y;
+    const targetY = 0.03 * hmdEuler.y + yawObject.rotation.y;
+    console.table({hmd:0.03 * hmdEuler.y, yaw: yawObject.rotation.y})
+
+    el.object3D.rotation.x = 0.03 * targetX + 0.97 * el.object3D.rotation.x;
+    el.object3D.rotation.y = 0.03 * targetY + 0.97 * el.object3D.rotation.y;
     el.object3D.rotation.z = 0;
   },
 
@@ -400,3 +404,4 @@ module.exports.Component = registerComponent('no-click-look', {
     this.hasSavedPose = false;
   }
 });
+
