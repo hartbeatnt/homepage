@@ -1,30 +1,72 @@
+/* @value bp-md from "view/index.css" */
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  font-family: IBM BIOS;
 }
 
 .links {
   margin: auto;
+  width: 100vw;
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  left: 20%;
 }
 
-.welcome {
+.info {
   text-align: center;
-  font-size: 36px;
+  font-size: 14px;
   color: white;
-  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  max-width: 60%;
+  min-width: 300px;
+  margin: auto;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  columns: 2;
+  justify-content: space-around;
+  width: 60%;
+  min-width: 150px;
+  max-width: 300px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.tag {
+  width: 50%;
+  padding-top: 10px;
+  font-family: ATT PC;
+  letter-spacing: 1px;
+}
+
+.tag div {
+  display: inline-block;
+  white-space: pre;
 }
 
 .link{
   width: 60vw;
   height: 30vh;
   background-color: rgba(8,8,8,0.5);
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-left: 20vw;
+}
+
+@media (min-width: 700px) {
+  .tags {
+    width: 100%
+  }
+  .tag {
+    width: 25%;
+    padding-top: 22px;
+    padding-bottom: 12px;
+  }
 }

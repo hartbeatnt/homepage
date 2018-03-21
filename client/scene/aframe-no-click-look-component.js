@@ -204,7 +204,6 @@ module.exports.Component = registerComponent('no-click-look', {
       Math.min(this.data.maxTilt, 0.03 * hmdEuler.x + pitchObject.rotation.x)
     );
     const targetY = 0.03 * hmdEuler.y + yawObject.rotation.y;
-    console.table({hmd:0.03 * hmdEuler.y, yaw: yawObject.rotation.y})
 
     el.object3D.rotation.x = 0.03 * targetX + 0.97 * el.object3D.rotation.x;
     el.object3D.rotation.y = 0.03 * targetY + 0.97 * el.object3D.rotation.y;

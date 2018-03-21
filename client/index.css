@@ -1,0 +1,22 @@
+@value bp-xs: (min-width: 50px);
+@value bp-sm: (min-width: 480px);
+@value bp-md: (min-width: 768px);
+@value bp-lg: (min-width: 992px);
+
+@font-face {
+  font-family: 'IBM BIOS';
+  font-weight: normal;
+  src: url('https://s3-us-west-1.amazonaws.com/natehart.xyz/fonts/PxPlus_IBM_BIOS.ttf');
+}
+
+@font-face {
+  font-family: 'Tandy New';
+  font-weight: normal;
+  src: url('https://s3-us-west-1.amazonaws.com/natehart.xyz/fonts/PxPlus_TandyNew_TV-2y.ttf');
+}
+
+@font-face {
+  font-family: 'ATT PC';
+  font-weight: normal;
+  src: url('https://s3-us-west-1.amazonaws.com/natehart.xyz/fonts/PxPlus_TandyNew_TV-2y.ttf');
+}
